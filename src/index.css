@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+html {scroll-behavior: smooth;}
+
+
+.stack-card {position: sticky;
+  top: calc(var(--i) * 1.4rem);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  z-index: calc(1000 + var(--i));
+  margin-top: -1.2rem;}
+
+.stack-card:hover {transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);}
+
+/* portrait orientation helpers */
+@media (orientation: portrait) {
+  .portrait-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .portrait-span-2 {
+    grid-column: span 2 / span 2;
+  }
+}
+
